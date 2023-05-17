@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+<html>
+    <head>
+        <title>Detail page</title>
+    </head>
+        <body>
+            
+            {% block body %}
+          
+            <div calss="container">
+                <div class="row">
+                    <div class="col-md-6">
+
+            <img src="{{movie.img.url}}" width="200" height="200">
+                    </div>
+                    <div class="col-md-6">
+
+           <h2> {{movie.name}}</h2>
+           <h4> {{movie.desc}}</h4>
+            <h4>{{movie.year}}</h4>
+            
+           
+            
+            <a class="btn btn-primary" href="{% url 'movieapp:update' movie.id %}">update</a>
+            <a class="btn btn-primary" href="{% url 'movieapp:delete' movie.id %}">delete</a>
+                    </div>
+
+                </div>
+            </div>
+            
+            {% endblock %}
+            {% comment %} <a href="{% url 'detail' i.id%}">
+                {{i.name}}<br> {% endcomment %}
+        </body>
+       
+   
+</html>
